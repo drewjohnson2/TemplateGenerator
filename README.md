@@ -25,7 +25,7 @@ Type of file to be created (Python, C++, Java etc.)  <br /><br />
 Example:  <br /><br />
 ```temp arg1 java```
 ### Third Argument (Optional)
-The third argument is the editor to be used. With out this third argument the script will default to Visual Studio Code (or whatever you editor you choose).
+The third argument is the editor to be used. Without this third argument the script will default to Visual Studio Code (or the default editor of your choice).
  <br /><br />
  Examples:
   <br /><br />

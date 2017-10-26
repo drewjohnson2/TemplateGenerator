@@ -1,0 +1,37 @@
+NAME
+    temp -- template
+
+DESCRIPTION
+    The temp utility lets you create a program template in a language of your 
+    choice. A template is created and saved in the appropriate folder. After
+    the template has been created, the new file is opened in the users choice
+    of text editor.
+
+ARGUMENTS  
+    Temp takes three arguments, two of which are required:
+        1. file name (required)
+        2. file type (required)
+        3. editor (optional)
+
+    Required arguments should be passed as such - temp *file_name* *file_type*. 
+    If the user desires, the text editor to be used can be specified. This 
+    should be done as such - temp *file_name* *file_type* *text_editor*.
+    The Visual Studio Code text editor is used if not specified otherwise. All
+    arguments are case insensitive. File names and types should be typed
+    as one continuous word each.
+
+OPTIONS
+    Options for file type are as follows:
+
+    cpp         Creates a template for a C++ program. Imports libraries
+                iostream, cstdlib, and creates main function.
+
+    java        Creates a template for a Java program. Creates class and
+                main method. 
+
+    python      Creates a template for a Python program. Adds shebang line
+                for MacOS.
+
+    python3     Creates a template for a Python3 program. Adds python3 shebang
+                line for MacOS
+

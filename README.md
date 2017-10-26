@@ -55,7 +55,7 @@ This file is located in the Templates directory included in the pull. You'll nee
 For example <br /><br />
 ```tempMan="/Path/to/the/directory/Templates/TempMan.txt"```
 ### Lines 40 through 44
-This is going to be the path to your templates. These templates are located in the Templet directory. You want to edit these lines (while keeping variable names) to reflet the location of these templates in your path. 
+This is going to be the path to your templates. These templates are located in the Template directory. You want to edit these lines (while keeping variable names) to reflet the location of these templates in your path. 
 ### Lines 46 through 50
 These lines are the paths to directories that you want to save your new template to. Currently in the script if I were to type into the terminal ```temp newjavafile java``` the script would save a file called ```newjavafile.java``` in the path I have specified for java files. I like to keep source code for different languages in corresponding files, however if you choose, you can have these files save to whatever directory you wish. <br /><br />
 If you choose to keep things within the same format as me, you want to change these lines to the paths you want to save your files to. <br /><br />

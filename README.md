@@ -33,7 +33,7 @@ The third argument is the editor to be used. Without this third argument the scr
  <br />
  ```temp newerFile C emacs```
  <br /><br />
-**It is important that this second argument match the corresponding case statement in the script (Lines 46 through 50)**
+**It is important that the second argument match the corresponding case statement in the script (Lines 46 through 50)**
 ## Modification
 You will need to make modifications to lines 13, 40 through 44, and 46 through 50 to get the script working correctly. In addition, you will need to add an alias to your .bash_profile file in order for your command to work.
 ### .bash_profile

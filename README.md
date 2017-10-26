@@ -35,7 +35,7 @@ The third argument is the editor to be used. Without this third argument the scr
  <br /><br />
 **It is important that the second argument match the corresponding case statement in the script (Lines 46 through 50)**
 ## Modification
-You will need to make modifications to lines 13, 40 through 44, and 46 through 50 to get the script working correctly. In addition, you will need to add an alias to your .bash_profile file in order for your command to work.
+You will need to make modifications to lines 13, 40 through 44, and 46 through 50 to get the script working correctly on your system. In addition, you will need to add an alias to your .bash_profile file in order for your command to work.
 ### .bash_profile
 Script is most useful when an alias as been added to your .bash_profile file. For example: <br /> <br />
 ```alias temp="cd /Users/drewjohnson/desktop/programming/shellscripts; ./filegenerator.sh"``` <br /><br />

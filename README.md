@@ -13,6 +13,8 @@ This shell script will generate a template for a specified programming language,
  Where ```newlangauge``` is the argument given for the new language, ```$newLanguageTemp``` is the variable containing the path to the template for this new langague and ```$newLanguagePath``` is the path to where the new file will be saved.
 ## Arguments
 filegenerator.sh accepts up to three arguments: Filename, file type, and editor (optional). If no arguements are given, the script manual is displayed.
+### No Arguments
+The script manual is displayed. You'll need to edit line 13 to the correct path to the manual text file.
 ### First Argument
 The name of the new file.
  <br /><br />

@@ -10,9 +10,9 @@
 # terminal session and a file will be created in
 # the desired location and then be opened.
 
-tempMan="/Users/drewjohnson/desktop/programming/shellscripts/Templates/TempMan.txt"
+tempMan="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/TempMan.txt"
 
-if [ $1 ]
+if [ $1 ]							# If block checks for arguments
 then
 	fileName=$1
 	
@@ -37,33 +37,33 @@ else
 	exit 0
 fi
 
-javaTemp="/Users/drewjohnson/desktop/programming/shellscripts/Templates/JavaTemp"
-cppTemp="/Users/drewjohnson/desktop/programming/shellscripts/Templates/cppTemp"
-cTemp="/Users/drewjohnson/desktop/programming/shellscripts/Templates/cTemp"
-pythonTemp="/Users/drewjohnson/desktop/programming/shellscripts/Templates/PythonTemp"
-python3Temp="/Users/drewjohnson/desktop/programming/shellscripts/Templates/Python3Temp"
+javaTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/JavaTemp"			#
+cppTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cppTemp"			#
+cTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cTemp"				# Paths to templates
+pythonTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/PythonTemp"		#
+python3Temp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/Python3Temp"	#
 
-cPath="/Users/drewjohnson/desktop/programming/C/$fileName.c"
-cppPath="/Users/drewjohnson/desktop/programming/cpp/$fileName.cpp"
-javaPath="/Users/drewjohnson/desktop/programming/java/$fileName.java"
-pythonPath="/Users/drewjohnson/desktop/programming/Python/$fileName.py"
-python3Path="/Users/drewjohnson/desktop/programming/Python/$fileName.py"
+cPath="/Users/drewjohnson/desktop/programming/C/$fileName.c"				#
+cppPath="/Users/drewjohnson/desktop/programming/cpp/$fileName.cpp"			#
+javaPath="/Users/drewjohnson/desktop/programming/java/$fileName.java"		# Paths to where files are to be saved
+pythonPath="/Users/drewjohnson/desktop/programming/Python/$fileName.py"		#
+python3Path="/Users/drewjohnson/desktop/programming/Python/$fileName.py"	#
 
-shopt -s nocasematch
+shopt -s nocasematch	# Turn off case sensitivity
 
-case $fileType in
+case $fileType in		# Case block checks $fileType and creates, saves, and opens file
 	
-	"c") cat "$cTemp" >> $cPath && $editor $cPath;;
+	"c") cat "$cTemp" >> $cPath && $editor $cPath;;								# Saves C file in C path
 
-	"cpp") cat "$cppTemp" >> $cppPath && $editor $cppPath;;
+	"cpp") cat "$cppTemp" >> $cppPath && $editor $cppPath;;						# Saves C++ file in C++ path
 
-	"c++") cat "$cppTemp" >> $cppPath && $editor $cppPath;;
+	"c++") cat "$cppTemp" >> $cppPath && $editor $cppPath;;						# Saves C++ file in C++ path
 
-	"java") cat "$javaTemp" >> $javaPath && $editor $javaPath;;
+	"java") cat "$javaTemp" >> $javaPath && $editor $javaPath;;					# Saves java file in java path
 	
-	"python") cat "$pythonTemp" >> $pythonPath && $editor $pythonPath;;
+	"python") cat "$pythonTemp" >> $pythonPath && $editor $pythonPath;;			# Saves python file in python path
 
-	"python3") cat "$python3Temp" >> $python3Path && $editor $python3Path;;
+	"python3") cat "$python3Temp" >> $python3Path && $editor $python3Path;;		# Saves python3 file in python3 path
 
 	*) echo "I don't support that language yet!";;
 esac

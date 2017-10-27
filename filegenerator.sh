@@ -37,11 +37,11 @@ else
 	exit 0
 fi
 
-javaTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/JavaTemp"		#
-cppTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cppTemp"		#
-cTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cTemp"			# Paths to templates
-pythonTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/PythonTemp"		#
-python3Temp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/Python3Temp"	#
+javaTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/JavaTemp"	   #
+cppTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cppTemp"	   #
+cTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cTemp"		   # Paths to templates
+pythonTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/PythonTemp"    #
+python3Temp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/Python3Temp"  #
 
 cPath="/Users/drewjohnson/desktop/programming/C/$fileName.c"			#
 cppPath="/Users/drewjohnson/desktop/programming/cpp/$fileName.cpp"		#

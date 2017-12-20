@@ -1,7 +1,4 @@
 #!/bin/bash
-# To run 'code' command make sure visual studio code
-# is added to your path. Instructions can be found
-# at https://code.visualstudio.com/docs/setup/mac
 
 # Script is most useful when an alias as been added
 # to your .bash_profile file. For example:
@@ -10,60 +7,63 @@
 # terminal session and a file will be created in
 # the desired location and then be opened.
 
+# Allows the use of aliases
+shopt -s expand_aliases
+
 tempMan="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/TempMan.txt"
 
 if [ $1 ]							# If block checks for arguments
 then
 	fileName=$1
+
+	extension=${fileName##*.}
 	
 	if [ $2 ]
 	then
-		fileType=$2
-		
-		if [ $3 ]
-		then
-			editor=$3
-		
-		else
-			editor=code
-		fi
+		editor=$2
 
-	else
-		echo "Second argument needed: temp $fileName *file type*"
-		exit 0
-	fi
+    else
+    	editor='subl'
+    fi
+
 else
 	cat $tempMan
 	exit 0
 fi
 
-javaTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/JavaTemp"	   #
-cppTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cppTemp"	   #
-cTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cTemp"		   # Paths to templates
-pythonTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/PythonTemp"    #
-python3Temp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/Python3Temp"  #
+# Paths to templates
+javaTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/JavaTemp"	   
+cppTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cppTemp"	   
+cTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/cTemp"		   
+python3Temp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/Python3Temp"  
+phpTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/PHPTemp"
+shellTemp="/Users/drewjohnson/desktop/programming/shellscripts/TemplateGenerator/Templates/shellTemp"
 
-cPath="/Users/drewjohnson/desktop/programming/C/$fileName.c"			#
-cppPath="/Users/drewjohnson/desktop/programming/cpp/$fileName.cpp"		#
-javaPath="/Users/drewjohnson/desktop/programming/java/$fileName.java"		# Paths to where files are to be saved
-pythonPath="/Users/drewjohnson/desktop/programming/Python/$fileName.py"		#
-python3Path="/Users/drewjohnson/desktop/programming/Python/$fileName.py"	#
+# Paths to where files are to be saved
+cPath="/Users/drewjohnson/desktop/programming/C/$fileName"			  
+cppPath="/Users/drewjohnson/desktop/programming/cpp/$fileName"		  
+javaPath="/Users/drewjohnson/desktop/programming/java/$fileName"	  
+python3Path="/Users/drewjohnson/desktop/programming/Python/$fileName" 
+phpPath="/Users/drewjohnson/desktop/programming/PHP/$fileName"
+shellPath="/Users/drewjohnson/desktop/programming/shellscripts/$fileName"
 
-shopt -s nocasematch	# Turn off case sensitivity
+# Turn off case sensitivity
+shopt -s nocasematch	
 
-case $fileType in	# Case block checks $fileType and creates, saves, and opens file
+# Case block checks $extension and creates, saves, and opens file
+case $extension in	
 	
-	"c") cat "$cTemp" >> $cPath && $editor $cPath;;					# Saves C file in C path
+	"c") cat "$cTemp" >> $cPath && $editor $cPath;;					    
 
-	"cpp") cat "$cppTemp" >> $cppPath && $editor $cppPath;;				# Saves C++ file in C++ path
+	"cpp") cat "$cppTemp" >> $cppPath && $editor $cppPath;;				
 
-	"c++") cat "$cppTemp" >> $cppPath && $editor $cppPath;;				# Saves C++ file in C++ path
-
-	"java") cat "$javaTemp" >> $javaPath && $editor $javaPath;;			# Saves java file in java path
+	"java") cat "$javaTemp" >> $javaPath && $editor $javaPath;;			
 	
-	"python") cat "$pythonTemp" >> $pythonPath && $editor $pythonPath;;		# Saves python file in python path
+	"py") cat "$python3Temp" >> $python3Path && $editor $python3Path;;	
+	
+	"php") cat "$phpTemp" >> $phpPath && $editor $phpPath;;
 
-	"python3") cat "$python3Temp" >> $python3Path && $editor $python3Path;;		# Saves python3 file in python3 path
+	"sh") cat "$shellTemp" >> $shellPath && $editor $shellPath;;
 
 	*) echo "I don't support that language yet!";;
 esac
